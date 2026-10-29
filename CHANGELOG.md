@@ -4,6 +4,11 @@
 
 [Full Changelog](https://github.com/overtrue/wechat/compare/4.0.0...HEAD)
 
+**Breaking changes:**
+
+- 最低 Symfony 版本要求从 `^2.7 / ^3.0 / ^4.0 / ^5.0` 提升到 `^6.0 || ^7.0`。涉及组件：`symfony/cache`、`symfony/event-dispatcher`、`symfony/http-foundation`。
+- `ServerGuard::serve()` 中获取请求 Content-Type 的方式由已废弃的 `Request::getContentType()` 改为 `Request::headers->get('content-type')`（后者在所有 Symfony 版本均有效，且返回原始 MIME 字符串）。
+
 **Closed issues:**
 
 - 能否增加对symfony4的支持 [\#1044](https://github.com/overtrue/wechat/issues/1044)

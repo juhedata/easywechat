@@ -100,7 +100,7 @@ class ServerGuard
         $this->app['logger']->debug('Request received:', [
             'method' => $this->app['request']->getMethod(),
             'uri' => $this->app['request']->getUri(),
-            'content-type' => $this->app['request']->getContentType(),
+            'content-type' => $this->app['request']->headers->get('content-type'),
             'content' => $this->app['request']->getContent(),
         ]);
 
